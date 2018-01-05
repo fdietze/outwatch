@@ -52,7 +52,7 @@ lazy val nomad = project
 
 
 
-lazy val outwatchRxjs = (project in file("outwatch-rxjs"))
+lazy val outwatchMonix = (project in file("outwatch-monix"))
     .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
     .dependsOn(outwatch, nomad)
     .settings(commonSettings)
@@ -60,7 +60,7 @@ lazy val outwatchRxjs = (project in file("outwatch-rxjs"))
         libraryDependencies ++= Seq(
           "org.typelevel" %%% "cats-core" % catsVersion,
           "org.typelevel" %%% "cats-effect" % catsEffectVersion,
-          "com.github.lukajcb" %%% "rxscala-js" % "0.15.2",
+          "io.monix"        %%% "monix"       % "3.0.0-M2",
           "org.scalatest" %%% "scalatest" % "3.0.4" % Test,
           "org.scalacheck" %%% "scalacheck" % "1.13.5" % Test
         )
